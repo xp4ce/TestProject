@@ -26,7 +26,7 @@ jobs:
         name: Git clone our Repo
       
       - name: Create ZIP package
-        run : zip -r${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
+        run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
         
         
     
