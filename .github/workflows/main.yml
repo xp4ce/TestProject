@@ -41,7 +41,7 @@ jobs:
          
       
       - name  : Happy Message to CI, finish
-        run   : echo "CI yes! pipleline succesfully!"
+        run   : echo "CI yesssss! pipleline succesfully!"
         
         
   my_cd_part:
