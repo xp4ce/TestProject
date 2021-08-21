@@ -1,0 +1,32 @@
+
+
+name: CI-CD
+env:
+  S3_BACKET_NAME      : "xpace-flask"
+  EB_APPLICATION_NAME : "MyFlask"
+  EB_ENVIRONMENT_NAME : "MyFlask-env"
+  DEPLOY_PACKAGE_NAME : "flask_app_${{ git.hub.sha }}.zip" 
+  AWS_REGION_NAME     : "eu-north-2"      
+   
+  
+
+on:
+  push:
+    branches: 
+     -master
+     
+     
+jobs:
+  my_ci_part:
+    runs-on : ubuntu-latest
+
+    
+    steps:
+      - uses: actions/checkout@v2
+        name: Git clone our Repo
+      
+      - name: Create ZIP package
+        run : zip -r${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
+        
+        
+    
