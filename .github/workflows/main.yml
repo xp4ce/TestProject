@@ -5,7 +5,7 @@ env:
   S3_BACKET_NAME      : "xpace-flask"
   EB_APPLICATION_NAME : "MyFlask"
   EB_ENVIRONMENT_NAME : "MyFlask-env"
-  DEPLOY_PACKAGE_NAME : "flask_app_${{ git.hub.sha }}.zip" 
+  DEPLOY_PACKAGE_NAME : "flask_app_${{ github.sha }}.zip" 
   AWS_REGION_NAME     : "eu-north-2"      
    
   
@@ -13,7 +13,7 @@ env:
 on:
   push:
     branches: 
-     -main
+     - master
      
      
 jobs:
@@ -22,7 +22,7 @@ jobs:
 
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
         name: Git clone our Repo
       
       - name: Create ZIP package
